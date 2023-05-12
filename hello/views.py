@@ -9,6 +9,9 @@ def greet(request, name: str):
     })
 
 
+def cum(request):
+    return HttpResponse("cummed")
+
 
 
 

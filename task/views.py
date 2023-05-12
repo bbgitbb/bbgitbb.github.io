@@ -1,5 +1,11 @@
-from typing import Callable, Iterable
+
 from django.shortcuts import render
+from django import forms
+
+
+class AddTaskForm(forms.Form):
+    task = forms.CharField(label="task")
+    importance = forms.IntegerField(label="importance")
 
 
 
@@ -15,7 +21,8 @@ def index(request):
 
 def add_task(request):
     return render(request, 'task/add_task.html', {
-        'tasks': tasks
+        'tasks': tasks,
+        "form": AddTaskForm()
     })
 
 
